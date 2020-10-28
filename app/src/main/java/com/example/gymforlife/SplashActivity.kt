@@ -19,7 +19,7 @@ class SplashActivity : AppCompatActivity() {
     private fun verifyUserIsLoggedIn(){
         val uid = FirebaseAuth.getInstance().uid
         if (uid.isNullOrEmpty()) {
-            Intent(this, OnboardingActivity::class.java).let {
+            Intent(this, LoginActivity::class.java).let {
                 it.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK.or(Intent.FLAG_ACTIVITY_NEW_TASK)
                 startActivity(it)
                 finish()
