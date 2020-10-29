@@ -17,6 +17,18 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    sourceSets {
+        main {
+            java.srcDirs += 'src/main/java'
+            // List and include all res-* folders
+            file('src/main/').listFiles().each {
+                if (it.isDirectory() && it.name.contains('res')) {
+                    res.srcDirs += it.path
+                }
+            }
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false

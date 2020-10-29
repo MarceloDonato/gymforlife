@@ -1,0 +1,16 @@
+<resources>
+
+    <!--Login-->
+    <string name="register_button">Ainda não tem uma conta? \n <b>Cadastrar-se</b></string>
+
+    <string name="login_email">Email</string>
+    <string name="login_password">Senha</string>
+    <string name="button_login">Entrar</string>
+
+    <string name="login_email_invalid">Insira um email</string>
+    <string name="login_password_invalid">Insira uma senha</string>
+
+    <string name="login_message_success">Login realizado com sucesso.</string>
+    <string name="login_message_error">Verifique seu email e senha e tente novamente.</string>
+
+</resources>

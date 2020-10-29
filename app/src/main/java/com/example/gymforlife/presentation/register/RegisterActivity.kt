@@ -1,22 +1,25 @@
-package com.example.gymforlife
+package com.example.gymforlife.presentation.register
 
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import com.example.gymforlife.R
+import com.example.gymforlife.presentation.home.HomeActivity
+import com.example.gymforlife.presentation.login.LoginActivity
 import com.google.firebase.auth.FirebaseAuth
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_register.*
 
-class MainActivity : AppCompatActivity() {
+class RegisterActivity : AppCompatActivity() {
 
     companion object {
-        fun getStartIntent(context: Context) = Intent(context, MainActivity::class.java)
+        fun getStartIntent(context: Context) = Intent(context, RegisterActivity::class.java)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_register)
 
         register_button.setOnClickListener {
             performeRegister()

@@ -1,4 +1,4 @@
-package com.example.gymforlife
+package com.example.gymforlife.presentation.login
 
 import android.content.Context
 import android.content.Intent
@@ -6,8 +6,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View.GONE
 import android.view.View.VISIBLE
+import com.example.gymforlife.R
 import com.example.gymforlife.mechanism.extension.get
 import com.example.gymforlife.mechanism.extension.toast
+import com.example.gymforlife.presentation.register.RegisterActivity
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_login.*
 
@@ -29,7 +31,11 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun startRegister() {
-        startActivity(MainActivity.getStartIntent(this))
+        startActivity(
+            RegisterActivity.getStartIntent(
+                this
+            )
+        )
         finish()
     }
 

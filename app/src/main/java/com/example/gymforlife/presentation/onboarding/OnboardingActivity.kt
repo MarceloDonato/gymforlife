@@ -1,7 +1,10 @@
-package com.example.gymforlife
+package com.example.gymforlife.presentation.onboarding
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.gymforlife.R
+import com.example.gymforlife.presentation.login.LoginActivity
+import com.example.gymforlife.presentation.register.RegisterActivity
 import kotlinx.android.synthetic.main.activity_onboarding.*
 
 class OnboardingActivity : AppCompatActivity() {
@@ -15,7 +18,7 @@ class OnboardingActivity : AppCompatActivity() {
         }
 
         button_cadastro.setOnClickListener{
-            startActivity(MainActivity.getStartIntent(this))
+            startActivity(RegisterActivity.getStartIntent(this))
             finish()
         }
     }

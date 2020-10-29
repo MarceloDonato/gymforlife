@@ -1,10 +1,13 @@
-package com.example.gymforlife
+package com.example.gymforlife.presentation.splash
 
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import com.example.gymforlife.R
+import com.example.gymforlife.presentation.home.HomeActivity
+import com.example.gymforlife.presentation.onboarding.OnboardingActivity
 import com.google.firebase.auth.FirebaseAuth
 
 class SplashActivity : AppCompatActivity() {
