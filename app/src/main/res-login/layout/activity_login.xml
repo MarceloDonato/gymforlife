@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/amaranth">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_start"
@@ -19,47 +20,91 @@
         android:orientation="vertical"
         app:layout_constraintGuide_end="@dimen/guide_line_default" />
 
-    <EditText
-        android:id="@+id/edit_text_email"
-        android:layout_width="@dimen/match_constraint"
-        android:layout_height="wrap_content"
-        android:hint="@string/login_email"
-        android:textSize="@dimen/x_large_text"
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/logo_register"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="@dimen/default_margin"
+        android:src="@drawable/abc_vector_test"
         app:layout_constraintEnd_toStartOf="@+id/guideline_end"
         app:layout_constraintStart_toStartOf="@+id/guideline_start"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/edit_text_password"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_text_email"
         android:layout_width="@dimen/match_constraint"
         android:layout_height="wrap_content"
-        android:hint="@string/login_password"
-        android:textSize="@dimen/x_large_text"
+        android:textColorHint="@color/white"
+        android:theme="@style/default_text_input_layout"
+        app:layout_constraintBottom_toTopOf="@+id/input_text_password"
         app:layout_constraintEnd_toStartOf="@+id/guideline_end"
         app:layout_constraintStart_toStartOf="@+id/guideline_start"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_email" />
+        app:layout_constraintTop_toBottomOf="@+id/logo_register"
+        app:layout_constraintVertical_chainStyle="packed">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_text_email"
+            style="@style/text_input_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/login_email"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:textSize="@dimen/x_large_text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_text_password"
+        android:layout_width="@dimen/match_constraint"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/default_margin"
+        android:textColorHint="@color/white"
+        android:theme="@style/default_text_input_layout"
+        app:layout_constraintBottom_toTopOf="@+id/button_login_enter"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_end"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start"
+        app:layout_constraintTop_toBottomOf="@+id/input_text_email">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edit_text_password"
+            style="@style/text_input_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/login_password"
+            android:inputType="textPassword"
+            android:maxLines="1"
+            android:textSize="@dimen/x_large_text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button_login_enter"
+        style="@style/button_default_white"
         android:layout_width="@dimen/match_constraint"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/guide_line_default"
+        android:layout_marginTop="@dimen/default_margin"
+        android:layout_marginEnd="@dimen/guide_line_default"
         android:text="@string/button_login"
         android:textAllCaps="true"
+        app:layout_constraintBottom_toTopOf="@+id/button_start_register"
         app:layout_constraintEnd_toStartOf="@+id/guideline_end"
         app:layout_constraintStart_toStartOf="@+id/guideline_start"
-        app:layout_constraintTop_toBottomOf="@+id/edit_text_password" />
+        app:layout_constraintTop_toBottomOf="@+id/input_text_password" />
 
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/button_start_register"
         android:layout_width="@dimen/match_constraint"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/default_margin"
         android:gravity="center"
         android:text="@string/register_button"
         android:textSize="@dimen/x_large_text"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline_end"
-        app:layout_constraintStart_toStartOf="@+id/guideline_start"
-        app:layout_constraintTop_toBottomOf="@+id/button_login_enter" />
+        app:layout_constraintStart_toStartOf="@+id/guideline_start" />
 
     <include
         android:id="@+id/loader"
